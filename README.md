@@ -29,7 +29,7 @@ wgetがない場合は **yum -y install wget** でインストールしてくだ
 
 **sh /home/ユーザー名/ファイル名.sh** ユーザー階層にある場合（rootユーザー実行時）
 
-## [docker_hhvm.sh](https://github.com/site-lab/docker/docker_hhvm.sh)
+## [docker_hhvm.sh](https://github.com/site-lab/docker/blob/master/docker_hhvm.sh)
 apache+hhvmのインストールをします。
 * apache2.4.6
 * hhvm
