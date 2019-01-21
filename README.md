@@ -35,3 +35,11 @@ apache+hhvmのインストールをします。
 * hhvm
 
 このイメージは、**apache_hhvm.sh** のdocker版となります
+
+## [docker_apache_php72_mariadb103.sh](https://github.com/site-lab/docker/blob/master/docker_apache_php72_mariadb103.sh)
+LAMPapache_php72_mariadb103のインストールをします。
+* apache2.4.6
+* PHP7.2
+* MariaDB10.3
+
+このイメージは、**apache_php72_mariadb103.sh** のdocker版となります
