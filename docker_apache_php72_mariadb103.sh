@@ -68,11 +68,11 @@ if [ -e /etc/redhat-release ]; then
 
         #hhvmのダウンロード
         start_message
-        echo "hhvmのdockerイメージをダウンロードします"
+        echo "LAMP(apache24_php72_mariadb103)のdockerイメージをダウンロードします"
         echo ""
         docker pull sitelab/apache24_php72_mariadb103
         echo ""
-        echo "hhvmのコンテナを起動します"
+        echo "LAMP(apache24_php72_mariadb103)のコンテナを起動します"
         echo ""
         docker run --name lamp -p 80:80 -p 443:443 -dt sitelab/apache24_php72_mariadb103 /sbin/init
         end_message
