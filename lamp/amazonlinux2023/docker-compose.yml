@@ -5,7 +5,6 @@ services:
         context: .
         dockerfile: ./httpd/Dockerfile
     volumes: #ホストにあるファイルをマウント
-        #- ./httpd/httpd.conf:/etc/httpd/conf/httpd.conf #php-fpm、htaccessを許可したconfをアップ
         - ./httpd/log:/var/log/httpd/
         - ./share:/var/www/html #phpなど必要なファイルをshare
     tty: true  # ← これがないとコンテナにログインできない
