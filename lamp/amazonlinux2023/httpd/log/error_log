@@ -1,0 +1,12 @@
+[Sat Oct 26 22:48:35.833156 2024] [suexec:notice] [pid 1:tid 1] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.26.0.3. Set the 'ServerName' directive globally to suppress this message
+[Sat Oct 26 22:48:35.847366 2024] [lbmethod_heartbeat:notice] [pid 1:tid 1] AH02282: No slotmem from mod_heartmonitor
+[Sat Oct 26 22:48:35.849334 2024] [mpm_event:notice] [pid 1:tid 1] AH00489: Apache/2.4.62 (Amazon Linux) configured -- resuming normal operations
+[Sat Oct 26 22:48:35.850017 2024] [core:notice] [pid 1:tid 1] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Sat Oct 26 22:50:24.104334 2024] [mpm_event:notice] [pid 1:tid 1] AH00491: caught SIGTERM, shutting down
+[Sat Oct 26 22:52:32.851041 2024] [suexec:notice] [pid 1:tid 1] AH01232: suEXEC mechanism enabled (wrapper: /usr/sbin/suexec)
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.27.0.4. Set the 'ServerName' directive globally to suppress this message
+[Sat Oct 26 22:52:32.867426 2024] [lbmethod_heartbeat:notice] [pid 1:tid 1] AH02282: No slotmem from mod_heartmonitor
+[Sat Oct 26 22:52:32.869420 2024] [mpm_event:notice] [pid 1:tid 1] AH00489: Apache/2.4.62 (Amazon Linux) configured -- resuming normal operations
+[Sat Oct 26 22:52:32.870504 2024] [core:notice] [pid 1:tid 1] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+[Sat Oct 26 22:54:46.728169 2024] [mpm_event:notice] [pid 1:tid 1] AH00491: caught SIGTERM, shutting down

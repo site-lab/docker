@@ -1,0 +1,57 @@
+services:
+  amazonlinux2023:
+    container_name: "al2023" #httpdが入っている
+    build:
+        context: .
+        dockerfile: ./httpd/Dockerfile
+    volumes: #ホストにあるファイルをマウント
+        #- ./httpd/httpd.conf:/etc/httpd/conf/httpd.conf #php-fpm、htaccessを許可したconfをアップ
+        - ./httpd/log:/var/log/httpd/
+        - ./share:/var/www/html #phpなど必要なファイルをshare
+    tty: true  # ← これがないとコンテナにログインできない
+    ports:
+        - 80:80 #80ポート
+    environment:
+        TZ: Asia/Tokyo
+#PHPイメージ。ここではPHP8系を使用        
+  php:
+    container_name: "php"
+    build:
+        context: .
+        dockerfile: ./php/Dockerfile
+    working_dir: /var/www/html
+    command: 
+        php-fpm -F
+    volumes:
+        - ./share:/var/www/html
+        #- ./php/php.ini:/usr/local/etc/php/php.ini
+        - ./php/php.ini:/etc/php.ini
+        - ./php/log:/var/log/php-fpm
+    tty: true 
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    volumes:
+        - ./db:/etc/mysql/conf.d/my.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin
+    depends_on:
+      - mysql
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOSTS=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=mysql
+    ports:
+      - "8080:80"
+volumes:
+  db-data: 
