@@ -1,0 +1,15 @@
+services:
+  almalinux9:
+    container_name: "al9" #httpdが入っている
+    build:
+        context: .
+        dockerfile: ./httpd/Dockerfile
+    volumes: #ホストにあるファイルをマウント
+        - ./httpd/log:/var/log/httpd/
+        - ./share:/var/www/html #phpなど必要なファイルをshare
+    tty: true  # ← これがないとコンテナにログインできない
+    ports:
+        - 80:80 #80ポート
+    environment:
+        TZ: Asia/Tokyo
+
